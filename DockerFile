@@ -1,0 +1,12 @@
+FROM postgrest/postgrest
+
+
+RUN apt update -y && \
+    apt install -y git make pkg-config libpq-dev gcc
+
+# Clone the repo
+RUN git clone https://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github.com/begriffs/pg_listen.git
+
+# Compile
+RUN ./configure
+RUN make
